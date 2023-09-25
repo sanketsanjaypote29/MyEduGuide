@@ -1,0 +1,13 @@
+pypdf
+langchain
+torch
+accelerate
+bitsandbytes
+transformers
+sentence_transformers
+faiss_cpu
+streamlit
+base64
+PTL
+SpeeachRecognisation
+pandas
