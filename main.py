@@ -144,53 +144,6 @@ Helpful answer:
     # Combine the translated segments into a single translated text
         translated_text = ' '.join(translated_segments)
 
-        return translated_text
-
-
-    language_codes = {
-    'English': 'en',
-    'Hindi': 'hi',
-    'Bengali': 'bn',
-    'Telugu': 'te',
-    'Marathi': 'mr',
-    'Tamil': 'ta',
-    'Urdu': 'ur',
-    'Gujarati': 'gu',
-    'Kannada': 'kn',
-    'Odia (Oriya)': 'or',
-    'Malayalam': 'ml',
-    'Punjabi': 'pa'
-    }
-
-    st.title("💬 Ask AI")
-    st.caption("🚀 A Chatbot powered by LLM")
-    languages = ['English', 'Hindi', 'Bengali', 'Telugu', 'Marathi',
-             'Tamil', 'Urdu', 'Gujarati', 'Kannada',
-             'Odia (Oriya)', 'Malayalam', 'Punjabi']
-    selected_language = st.sidebar.selectbox('Select a language:', languages)
-
-    if "messages" not in st.session_state:
-        st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
-
-    for msg in st.session_state.messages:
-        if msg["role"] == "source":
-            link = msg["content"]
-            st.markdown(link, unsafe_allow_html=True)
-    else:
-        st.chat_message(msg["role"]).write(msg["content"])
-
-# Create a placeholder for the "Speak" button at the bottom
-    speak_placeholder = st.empty()
-
-# Add a "Record Audio" button
-    record_audio = speak_placeholder.button("Speak")
-
-    if record_audio:
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-            st.write("Listening...")
-            audio = r.listen(source)
-            st.write("Audio recording complete.")
 
     # Convert the audio to text using the speech recognition library
         try:
